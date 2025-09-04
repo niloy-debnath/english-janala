@@ -25,10 +25,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Font Integration -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header -->
-    <header class="mx-auto px-16 bg-[#badeff42] py-7">
+    <header class="mx-auto px-16 bg-[#badeff42] py-7 shadow-md">
       <nav class="flex justify-between">
         <div class="flex">
           <h1 class="text-3xl">English</h1>
@@ -63,7 +72,7 @@
           <h1 class="font-bold text-4xl">
             <span class="text-[#00BCFF]">English</span> is Easy!!
           </h1>
-          <p class="text-[#18181B] my-4">
+          <p class="text-[#18181B] my-4 font-bangla">
             আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
             <br />
             আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
@@ -80,7 +89,26 @@
           <img src="./assets/hero-student.png" alt="" />
         </div>
       </section>
+
+      <!-- Learn Vocabularies Card section -->
+      <section>
+        <h1 class="font-bold text-4xl text-center">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h1>
+        <div
+          id="card-container"
+          class="flex flex-wrap gap-5 justify-center mt-5"
+        ></div>
+      </section>
+
+      <!-- Word Card section -->
+
+      <section
+        id="word-container"
+        class="bg-gray-100 mt-10 w-11/12 mx-auto grid grid-cols-3 gap-5 p-4 rounded-md"
+      ></section>
     </main>
     <footer></footer>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
