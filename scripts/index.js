@@ -43,13 +43,30 @@ const displayWord = (words) => {
   const wordContainer = document.getElementById("word-container");
   wordContainer.innerHTML = ``;
 
+  if (words.length <= 0) {
+    wordContainer.innerHTML = `<div class="text-center col-span-full flex flex-col justify-center items-center">
+     <img src="./assets/alert-error.png" alt="">
+          <p class="text-[#79716B] col-span-full py-5">
+            এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
+          </p>
+          <h1 class="col-span-full text-4xl font-bold pb-8">
+            নেক্সট Lesson এ যান
+          </h1>
+        </div>`;
+    return;
+  }
+
   words.forEach((word) => {
     const wordCard = document.createElement("div");
     wordCard.innerHTML = `
     <div class="rounded-sm bg-white py-12 text-center shadow-md">
-          <h2 class="font-bold text-xl"> ${word.word} </h2>
+          <h2 class="font-bold text-xl"> ${
+            word.word ? word.word : "শব্দ পাওয়া যায়নি "
+          } </h2>
           <p>Meaning /Pronounciation</p>
-          <div> ${word.meaning} / ${word.pronunciation}</div>
+          <div> ${word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি "} / ${
+      word.pronunciation
+    }</div>
           <div class=" flex justify-between px-10 mt-4">
           <div class="bg-[#1a91ff1a] p-2 rounded-md hover:bg-[#1073d0b7]""><i class="fa-solid fa-circle-info "></i></div>
          <div class="bg-[#1a91ff1a] p-2 rounded-md hover:bg-[#1073d0b7]">
