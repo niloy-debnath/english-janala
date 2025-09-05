@@ -1,3 +1,8 @@
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 const createElements = (arr) => {
   const htmlElements = arr.map((el) => `<span class="btn">${el}</span>`);
   return htmlElements.join(" ");
@@ -76,7 +81,7 @@ const loadWordDetails = async (id) => {
 };
 
 const displayWordDetails = (word) => {
-  console.log(word);
+  // console.log(word);
   const detailsBox = document.getElementById("details-container");
   detailsBox.innerHTML = `
       <div>
@@ -135,7 +140,9 @@ const displayWord = (words) => {
             word.id
           })" class="fa-solid fa-circle-info "></i></div>
          <div class="bg-[#1a91ff1a] p-2 rounded-md hover:bg-[#1073d0b7]">
-          <i class="fa-solid fa-volume-high"></i>
+          <i onClick="pronounceWord( '${
+            word.word
+          } ')"class="fa-solid fa-volume-high" ></i>
          </div>
           </div>
         </div>
